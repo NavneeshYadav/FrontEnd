@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>Home</title>
+    <style>
+      * {
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #0081c9;
+        color: azure;
+      }
+      .heading {
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        text-align: center;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-btn {
+        display: flex;
+      }
+      .btn {
+        display: inline-block;
+        border: 1px solid white;
+        margin: 20px 15px;
+        border-radius: 7px;
+        background: none;
+        color: azure;
+        font-family: "Poppins", sans-serif;
+        width: 85px;
+        height: 35px;
+        font-size: 15px;
+      }
+      .btn:hover {
+        background-color: azure;
+        color: #0081c9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">
+        Welcome to Employee Database <i class="fa-solid fa-user"></i>
+      </h1>
+      <div class="container-btn">
+        <a href="/register.html" target="_blank"
+          ><button class="btn">Register</button></a
+        >
+        <a href="/login.html" target="_blank"
+          ><button class="btn">LogIn</button></a
+        >
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/68454c6376.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

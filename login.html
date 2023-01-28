@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LogIn</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        border: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #0081b4;
+        color: azure;
+      }
+      .heading {
+        font-family: "Poppins", sans-serif;
+        font-size: 30px;
+        color: black;
+        margin-bottom: 25px;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      .container-1 {
+        background-color: azure;
+        border: 1px solid rgb(48, 44, 44);
+        border-radius: 10px;
+        width: 450px;
+        height: 325px;
+        text-align: center;
+        padding: 50px 5px;
+      }
+      input {
+        font-family: "Poppins", sans-serif;
+        display: block;
+        text-align: center;
+        border: 1px solid black;
+        width: 250px;
+        height: 35px;
+        margin: 15px auto;
+        border-radius: 5px;
+        background-color: azure;
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        margin: 0 15px 10px 15px;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: azure;
+        font-weight: 550;
+      }
+      button:hover {
+        background-color: black;
+        color: azure;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-1">
+        <h1 class="heading">
+          LogIn <i class="fa-solid fa-right-to-bracket"></i>
+        </h1>
+        <form action="" class="form">
+          <input type="email" name="" id="" placeholder="Email address" />
+          <input
+            type="password"
+            name=""
+            id=""
+            placeholder="Enter your password"
+          />
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/68454c6376.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
