@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Form</title>
+    <title>Registration</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
@@ -75,22 +75,20 @@
           Registration Form <i class="fa-solid fa-user-plus"></i>
         </h1>
         <form action="" class="form">
-          <input type="text" placeholder="Enter your name" />
-          <input type="email" name="" id="" placeholder="Email address" />
+          <input type="text" id="Name" placeholder="Enter your name" />
+          <input type="email" id="Email" placeholder="Email address" />
           <input
             type="number"
-            name=""
-            id=""
+            id="Phone_No"
             placeholder="Enter your phone no."
           />
           <input
             type="password"
-            name=""
-            id=""
+            id="Password"
             placeholder="Enter your password"
           />
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+          <button id="Reset" type="reset">Reset</button>
+          <button id="Submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -98,5 +96,21 @@
       src="https://kit.fontawesome.com/68454c6376.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const Submit=document.getElementById("Submit");
+      const Data = () => {
+        let Name = document.getElementById("Name").value;
+        let Email = document.getElementById("Email").value;
+        let Phone_No = document.getElementById("Phone_No").value;
+        let Password = document.getElementById("Password").value;
+       
+        let Store_name = localStorage.setItem("Name",Name);
+        let Store_email = localStorage.setItem("Email",Email);
+        let Store_phone_No = localStorage.setItem("Phone_No",Phone_No);
+        let Store_password = localStorage.setItem("Password",Password);
+        alert("Submitted Successfully");
+      };
+      Submit.addEventListener("click",Data);
+    </script>
   </body>
 </html>
