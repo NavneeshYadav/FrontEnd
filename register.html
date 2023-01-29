@@ -97,20 +97,25 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      const Submit=document.getElementById("Submit");
-      const Data = () => {
-        let Name = document.getElementById("Name").value;
-        let Email = document.getElementById("Email").value;
-        let Phone_No = document.getElementById("Phone_No").value;
-        let Password = document.getElementById("Password").value;
-       
-        let Store_name = localStorage.setItem("Name",Name);
-        let Store_email = localStorage.setItem("Email",Email);
-        let Store_phone_No = localStorage.setItem("Phone_No",Phone_No);
-        let Store_password = localStorage.setItem("Password",Password);
-        alert("Submitted Successfully");
-      };
-      Submit.addEventListener("click",Data);
+      const Submit = document.getElementById("Submit");
+
+      Submit.addEventListener("click", (event) => {
+        event.preventDefault();
+        let users = [];
+        let user = {};
+        user.Name = document.getElementById("Name").value;
+        user.Email = document.getElementById("Email").value;
+        user.Phone_No = document.getElementById("Phone_No").value;
+        user.Password = document.getElementById("Password").value;
+
+        if (localStorage.getItem("users")) {
+          users = JSON.parse(localStorage.getItem("users"));
+        }
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alert("Registered successfully!");
+      });
     </script>
   </body>
 </html>

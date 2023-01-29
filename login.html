@@ -75,15 +75,14 @@
           LogIn <i class="fa-solid fa-right-to-bracket"></i>
         </h1>
         <form action="" class="form">
-          <input type="email" name="" id="" placeholder="Email address" />
+          <input type="email" id="email" placeholder="Email address" />
           <input
             type="password"
-            name=""
-            id=""
+            id="password"
             placeholder="Enter your password"
           />
           <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
+          <button type="submit" id="Submit">Submit</button>
         </form>
       </div>
     </div>
@@ -91,5 +90,27 @@
       src="https://kit.fontawesome.com/68454c6376.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const Submit = document.getElementById("Submit");
+
+      Submit.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].Email === email && users[i].Password === password) {
+            alert(
+              `Name: ${users[i].name}\nEmail: ${users[i].email}\nPhone: ${users[i].phone}`
+            );
+            return;
+          }
+        }
+
+        alert("User not found!");
+      });
+    </script>
   </body>
 </html>
