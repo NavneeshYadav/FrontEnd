@@ -66,11 +66,19 @@
         background-color: black;
         color: azure;
       }
+      #profile-heading{
+        color: black;
+        font-family: "Poppins", sans-serif;
+      }
+      .profile{
+        color: black;
+        font-family: "Poppins", sans-serif;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="container-1">
+      <div class="container-1" id="container-1">
         <h1 class="heading">
           LogIn <i class="fa-solid fa-right-to-bracket"></i>
         </h1>
@@ -95,7 +103,7 @@
 
       Submit.addEventListener("click", (event) => {
         event.preventDefault();
-
+        const container = document.getElementById("container-1");
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
         let users = JSON.parse(localStorage.getItem("users"));
@@ -105,6 +113,7 @@
             alert(
               `Name: ${users[i].name}\nEmail: ${users[i].email}\nPhone: ${users[i].phone}`
             );
+            container.innerHTML = ` <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile">Name: ${users[i].name}</p><p class="profile">Email: ${users[i].email}</p><p class="profile">Phone: ${users[i].phone}</p>`;
             return;
           }
         }
