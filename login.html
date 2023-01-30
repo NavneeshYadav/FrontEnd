@@ -66,6 +66,20 @@
         background-color: black;
         color: azure;
       }
+      #para-new-register{
+        margin-top: 7px;
+        display: block;
+        color: black;
+      }
+      #new-register{
+        margin-top: 7px;
+        color: #0081b4;
+      }
+      .profile-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
       #profile-heading{
         color: black;
         font-family: "Poppins", sans-serif;
@@ -73,6 +87,8 @@
       .profile{
         color: black;
         font-family: "Poppins", sans-serif;
+        
+        
       }
     </style>
   </head>
@@ -91,6 +107,7 @@
           />
           <button type="reset">Reset</button>
           <button type="submit" id="Submit">Submit</button>
+          <p id="para-new-register">Don't have an account? <a href="/register.html" id="new-register">Register</a></p>
         </form>
       </div>
     </div>
@@ -111,10 +128,10 @@
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
           
-            alert(
-              `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
-            );
-            container.innerHTML = ` <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile">Name: ${users[i].Name}</p><p class="profile">Email: ${users[i].Email}</p><p class="profile">Phone: ${users[i].Phone_No}</p>`;
+            // alert(
+            //   `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
+            // );
+            container.innerHTML = `<div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone:</b> ${users[i].Phone_No}</p></div>`;
             return;
           }
         }
