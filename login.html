@@ -125,13 +125,15 @@
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
         let users = JSON.parse(localStorage.getItem("users"));
-
+        let atpos = email.indexOf("@");
+         let dotpos = email.lastIndexOf(".");
+        if (email == null || email == "" || atpos < 1 || ( dotpos - atpos < 2 ) ){
+          alert( "Please provide your correct email ID!" );
+          document.getElementById("email").focus() ;
+           return;
+        }
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
-          
-            // alert(
-            //   `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
-            // );
             container.innerHTML = `<div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone:</b> ${users[i].Phone_No}</p></div>`;
             return;
           }
