@@ -16,7 +16,7 @@
         box-sizing: border-box;
       }
       body {
-        background-color: #0081b4;
+        background-color: #0081c9;
         color: azure;
       }
       .heading {
@@ -33,7 +33,7 @@
         width: 100vw;
         height: 100vh;
       }
-      .container-1 {
+      #container-1 {
         background-color: azure;
         border: 1px solid rgb(48, 44, 44);
         border-radius: 10px;
@@ -73,7 +73,7 @@
       }
       #new-register{
         margin-top: 7px;
-        color: #0081b4;
+        color: #0081c9;
       }
       .profile-container{
         display: flex;
@@ -87,23 +87,24 @@
       .profile{
         color: black;
         font-family: "Poppins", sans-serif;
-        
-        
+        text-align: left;
+        margin: 10px 60px 10px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="container-1" id="container-1">
+      <div id="container-1">
         <h1 class="heading">
           LogIn <i class="fa-solid fa-right-to-bracket"></i>
         </h1>
         <form action="" class="form">
-          <input type="email" id="email" placeholder="Email address" />
+          <input type="email" id="email" placeholder="Email address" required/>
           <input
             type="password"
             id="password"
             placeholder="Enter your password"
+            required
           />
           <button type="reset">Reset</button>
           <button type="submit" id="Submit">Submit</button>
