@@ -66,12 +66,12 @@
         background-color: black;
         color: azure;
       }
-      #paraalready {
+      #paraalready{
         margin-top: 7px;
         display: block;
         color: black;
       }
-      #already {
+      #already{
         margin-top: 7px;
         color: #0081c9;
       }
@@ -84,8 +84,8 @@
           Registration Form <i class="fa-solid fa-user-plus"></i>
         </h1>
         <form action="" class="form">
-          <input type="text" id="Name" placeholder="Enter your name" />
-          <input type="email" id="Email" placeholder="Email address" />
+          <input type="text" id="Name" placeholder="Enter your name"/>
+          <input type="email" id="Email" placeholder="Email address"/>
           <input
             type="number"
             id="Phone_No"
@@ -98,10 +98,7 @@
           />
           <button id="Reset" type="reset">Reset</button>
           <button id="Submit" type="submit">Submit</button>
-          <p id="paraalready">
-            Already have an account?
-            <a href="/login.html" id="already">LogIn</a>
-          </p>
+          <p id="paraalready">Already have an account? <a href="/login.html" id="already">LogIn</a></p>
         </form>
       </div>
     </div>
@@ -120,9 +117,6 @@
         user.Email = document.getElementById("Email").value;
         user.Phone_No = document.getElementById("Phone_No").value;
         user.Password = document.getElementById("Password").value;
-
-      
-
         if (user.Name == null || user.Name == "") {
           alert("Name can't be blank");
           return;
@@ -136,15 +130,13 @@
           alert("Phone no. is required");
           return;
         }
-        
-
         if (localStorage.getItem("users")) {
           users = JSON.parse(localStorage.getItem("users"));
         }
         users.push(user);
         localStorage.setItem("users", JSON.stringify(users));
         alert("Registered successfully!");
-        window.location.href = "/login.html";
+        window.location.href = '/login.html';
       });
     </script>
   </body>

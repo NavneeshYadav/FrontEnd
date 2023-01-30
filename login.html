@@ -16,7 +16,7 @@
         box-sizing: border-box;
       }
       body {
-        background-color: #0081b4;
+        background-color: #0081c9;
         color: azure;
       }
       .heading {
@@ -33,7 +33,7 @@
         width: 100vw;
         height: 100vh;
       }
-      .container-1 {
+      #container-1 {
         background-color: azure;
         border: 1px solid rgb(48, 44, 44);
         border-radius: 10px;
@@ -66,6 +66,20 @@
         background-color: black;
         color: azure;
       }
+      #para-new-register{
+        margin-top: 7px;
+        display: block;
+        color: black;
+      }
+      #new-register{
+        margin-top: 7px;
+        color: #0081c9;
+      }
+      .profile-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
       #profile-heading{
         color: black;
         font-family: "Poppins", sans-serif;
@@ -73,24 +87,28 @@
       .profile{
         color: black;
         font-family: "Poppins", sans-serif;
+        text-align: left;
+        margin: 10px 60px 10px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="container-1" id="container-1">
+      <div id="container-1">
         <h1 class="heading">
           LogIn <i class="fa-solid fa-right-to-bracket"></i>
         </h1>
         <form action="" class="form">
-          <input type="email" id="email" placeholder="Email address" />
+          <input type="email" id="email" placeholder="Email address" required/>
           <input
             type="password"
             id="password"
             placeholder="Enter your password"
+            required
           />
           <button type="reset">Reset</button>
           <button type="submit" id="Submit">Submit</button>
+          <p id="para-new-register">Don't have an account? <a href="/register.html" id="new-register">Register</a></p>
         </form>
       </div>
     </div>
@@ -111,10 +129,10 @@
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
           
-            alert(
-              `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
-            );
-            container.innerHTML = ` <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile">Name: ${users[i].Name}</p><p class="profile">Email: ${users[i].Email}</p><p class="profile">Phone: ${users[i].Phone_No}</p>`;
+            // alert(
+            //   `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
+            // );
+            container.innerHTML = `<div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone:</b> ${users[i].Phone_No}</p></div>`;
             return;
           }
         }
