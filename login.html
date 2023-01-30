@@ -110,10 +110,11 @@
 
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
+          
             alert(
-              `Name: ${users[i].name}\nEmail: ${users[i].email}\nPhone: ${users[i].phone}`
+              `Name: ${users[i].Name}\nEmail: ${users[i].Email}\nPhone: ${users[i].Phone_No}`
             );
-            container.innerHTML = ` <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile">Name: ${users[i].name}</p><p class="profile">Email: ${users[i].email}</p><p class="profile">Phone: ${users[i].phone}</p>`;
+            container.innerHTML = ` <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile">Name: ${users[i].Name}</p><p class="profile">Email: ${users[i].Email}</p><p class="profile">Phone: ${users[i].Phone_No}</p>`;
             return;
           }
         }
