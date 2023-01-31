@@ -19,7 +19,7 @@
         background-color: #0081c9;
         color: azure;
       }
-      #back-button{
+      #back-button {
         position: absolute;
         top: 40px;
         left: 50px;
@@ -80,25 +80,25 @@
         background-color: black;
         color: azure;
       }
-      #para-new-register{
+      #para-new-register {
         margin-top: 7px;
         display: block;
         color: black;
       }
-      #new-register{
+      #new-register {
         margin-top: 7px;
         color: #0081c9;
       }
-      .profile-container{
+      .profile-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
       }
-      #profile-heading{
+      #profile-heading {
         color: black;
         font-family: "Poppins", sans-serif;
       }
-      .profile{
+      .profile {
         color: black;
         font-family: "Poppins", sans-serif;
         text-align: left;
@@ -109,13 +109,15 @@
   <body>
     <div class="container">
       <div id="container-1">
-        <a href="home.html" id="back-button"><i class="fa-regular fa-circle-left fa-2x"></i></a>
+        <a href="home.html" id="back-button"
+          ><i class="fa-regular fa-circle-left fa-2x"></i
+        ></a>
         <h1 class="heading-company">Systango</h1>
         <h1 class="heading">
           LogIn <i class="fa-solid fa-right-to-bracket"></i>
         </h1>
         <form action="" class="form">
-          <input type="email" id="email" placeholder="Email address" required/>
+          <input type="email" id="email" placeholder="Email address" required />
           <input
             type="password"
             id="password"
@@ -124,7 +126,10 @@
           />
           <button type="reset">Reset</button>
           <button type="submit" id="Submit">Submit</button>
-          <p id="para-new-register">Don't have an account? <a href="/register.html" id="new-register">Register</a></p>
+          <p id="para-new-register">
+            Don't have an account?
+            <a href="/register.html" id="new-register">Register</a>
+          </p>
         </form>
       </div>
     </div>
@@ -142,11 +147,11 @@
         let password = document.getElementById("password").value;
         let users = JSON.parse(localStorage.getItem("users"));
         let atpos = email.indexOf("@");
-         let dotpos = email.lastIndexOf(".");
-        if (email === null || email === "" || atpos < 1 || ( dotpos - atpos < 2 ) ){
-          alert( "Please provide your correct email ID!" );
-          document.getElementById("email").focus() ;
-           return;
+        let dotpos = email.lastIndexOf(".");
+        if (email === null || email === "" || atpos < 1 || dotpos - atpos < 2) {
+          alert("Please provide your correct email ID!");
+          document.getElementById("email").focus();
+          return;
         }
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
