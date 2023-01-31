@@ -150,7 +150,7 @@
         }
         for (let i = 0; i < users.length; i++) {
           if (users[i].Email === email && users[i].Password === password) {
-            container.innerHTML = `<div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone No.:</b> ${users[i].Phone_No}</p>
+            container.innerHTML = `<a href="home.html" id="back-button"><i class="fa-regular fa-circle-left fa-2x"></i></a><h1 class="heading-company">Systango</h1><div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone No.:</b> ${users[i].Phone_No}</p>
               <a href="/login.html"
           ><button>LogOut</button></a
         ></div>`;
