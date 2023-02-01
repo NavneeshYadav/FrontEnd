@@ -1,22 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        background-color: #0081c9;
+        color: azure;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 98vw;
+        height: 97vh;
+        text-align: center;
+      }
+      #container-1 {
+        background-color: azure;
+        border: 1px solid rgb(48, 44, 44);
+        border-radius: 10px;
+        width: 450px;
+        height: 325px;
+        text-align: center;
+        padding: 50px 5px;
+      }
+      .profile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      #profile-heading {
+        color: azure;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .profile {
+        color: azure;
+        font-family: "Poppins", sans-serif;
+        text-align: left;
+        margin: 10px 60px 10px;
+      }
+      button {
+        width: 80px;
+        height: 30px;
+        margin: 0 15px 10px 15px;
+        border-radius: 5px;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: azure;
+        font-weight: 550;
+      }
+    </style>
     <script>
-        window.onload = function (){
-            let users1=JSON.parse(localStorage.getItem("users1"));
-            for (let key in users1){
-                document.getElementById(key).innerHTML=users1[key];
-            }
+      window.onload = function () {
+        let users1 = JSON.parse(localStorage.getItem("users1"));
+        for (let key in users1) {
+          document.getElementById(key).innerHTML = users1[key];
         }
+      };
     </script>
-</head>
-<body>
-    <p>Name :<span id="Name"> </span></p>
-    <p>Email :<span id="Email"> </span></p>
-    <p>Phone :<span id="Phone_No"> </span></p>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container-1">
+        <div class="profile-container">
+          <h1 id="profile-heading">
+            Profile Information <i class="fa-solid fa-user"></i>
+          </h1>
+          <p class="profile">Name :<span id="Name"> </span></p>
+          <p class="profile">Email :<span id="Email"> </span></p>
+          <p class="profile">Phone :<span id="Phone_No"> </span></p>
+          <a href="/login.html"><button>LogOut</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
