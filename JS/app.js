@@ -58,11 +58,17 @@ Submit1.addEventListener("click", (event) => {
     return;
   }
   for (let i = 0; i < users.length; i++) {
+    console.log(users);
     if (users[i].Email === email && users[i].Password === password) {
-      container.innerHTML = `<a href="home.html" id="back-button"><i class="fa-regular fa-circle-left fa-2x"></i></a><h1 class="heading-company">Systango</h1><div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone No.:</b> ${users[i].Phone_No}</p>
-        <a href="/login.html"
-    ><button>LogOut</button></a
-  ></div>`;
+
+
+  //     container.innerHTML = `<a href="home.html" id="back-button"><i class="fa-regular fa-circle-left fa-2x"></i></a><h1 class="heading-company">Systango</h1><div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone No.:</b> ${users[i].Phone_No}</p>
+  //       <a href="/login.html"
+  //   ><button>LogOut</button></a
+  // ></div>`;
+  localStorage.setItem("users1",JSON.stringify(users[i]));
+ 
+  window.location.href="home2.html";
       return;
     }
   }
