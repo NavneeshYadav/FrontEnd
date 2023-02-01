@@ -74,3 +74,7 @@ Submit1.addEventListener("click", (event) => {
   }
   alert("User not found!");
 });
+
+
+//home2 JS
+

@@ -1,0 +1,54 @@
+body {
+    background-color: #0081c9;
+    color: azure;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 98vw;
+    height: 97vh;
+    text-align: center;
+  }
+  #container-1 {
+    background-color: azure;
+    border: 1px solid rgb(48, 44, 44);
+    border-radius: 10px;
+    width: 450px;
+    height: 325px;
+    text-align: center;
+    padding: 50px 5px;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #profile-heading {
+    font-size: 50px;
+    color: azure;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .profile {
+    color: azure;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    margin: 10px 60px 10px;
+    font-size: 20px;
+  }
+  button {
+    width: 85px;
+    height: 35px;
+    font-size: 15px;
+    margin: 1px auto 15px;
+    border-radius: 5px;
+    border: 1px solid azure;
+    background: none;
+    color: azure;
+  }
+  button:hover{
+    background-color: azure;
+    color: #0081c9;
+  }
