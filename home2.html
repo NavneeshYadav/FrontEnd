@@ -54,14 +54,7 @@
         font-weight: 550;
       }
     </style>
-    <script>
-      window.onload = function () {
-        let users1 = JSON.parse(localStorage.getItem("users1"));
-        for (let key in users1) {
-          document.getElementById(key).innerHTML = users1[key];
-        }
-      };
-    </script>
+  
   </head>
   <body>
     <div class="container">
@@ -73,9 +66,22 @@
           <p class="profile">Name :<span id="Name"> </span></p>
           <p class="profile">Email :<span id="Email"> </span></p>
           <p class="profile">Phone :<span id="Phone_No"> </span></p>
-          <a href="/login.html"><button>LogOut</button></a>
+          <button id="logout-btn">LogOut</button>
         </div>
       </div>
     </div>
+    <script>
+      window.onload = function () {
+        let users1 = JSON.parse(localStorage.getItem("users1"));
+        for (let key in users1) {
+          document.getElementById(key).innerHTML = users1[key];
+        }
+      };
+      const logoutbtn = document.getElementById("logout-btn");
+      logoutbtn.addEventListener("click", () => {
+        localStorage.removeItem("users1");
+        window.location.href="login.html";
+      });
+    </script>
   </body>
 </html>
