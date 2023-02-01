@@ -10,6 +10,7 @@ if (Submit != null) {
     user.Email = document.getElementById("Email").value;
     user.Phone_No = document.getElementById("Phone_No").value;
     user.Password = document.getElementById("Password").value;
+    user.Image=document.getElementById("upload-img").value;
     let atpos = user.Email.indexOf("@");
     let dotpos = user.Email.lastIndexOf(".");
     if (user.Name == null || user.Name == "") {

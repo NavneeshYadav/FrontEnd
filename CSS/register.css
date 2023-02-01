@@ -55,6 +55,14 @@
     border-radius: 5px;
     background-color: azure;
   }
+  #upload-img{
+    color:#6a6c6e; 
+       border: none;
+       text-align: center;
+       display: block;
+       height: 22px;
+    width: 177px;
+  }
   button {
     width: 80px;
     height: 30px;
