@@ -1,4 +1,18 @@
 //Register JS
+const profile=document.querySelector("#upload-img")
+if(profile != null){
+  var upload_image=" ";
+  profile.addEventListener("change",function(){
+    console.log(profile.value);
+    const reader = new FileReader();
+    reader.addEventListener("load",() => {
+      upload_image+=reader.result;
+      // document.querySelector("#upload-img").style.backgroundImage = `url(${upload_image})`;
+      localStorage.setItem("recent-image",reader.result);
+    })
+    reader.readAsDataURL(this.files[0]);
+              })
+}
 const Submit = document.getElementById("Submit");
 
 if (Submit != null) {
@@ -10,6 +24,8 @@ if (Submit != null) {
     user.Email = document.getElementById("Email").value;
     user.Phone_No = document.getElementById("Phone_No").value;
     user.Password = document.getElementById("Password").value;
+    user.image = localStorage.getItem("recent-image")
+    localStorage.removeItem("recent-image");
     let atpos = user.Email.indexOf("@");
     let dotpos = user.Email.lastIndexOf(".");
     if (user.Name == null || user.Name == "") {
@@ -59,16 +75,8 @@ if(Submit1 != null){
       return;
     }
     for (let i = 0; i < users.length; i++) {
-      console.log(users);
       if (users[i].Email === email && users[i].Password === password) {
-  
-  
-    //     container.innerHTML = `<a href="home.html" id="back-button"><i class="fa-regular fa-circle-left fa-2x"></i></a><h1 class="heading-company">Systango</h1><div class="profile-container"> <h1 id="profile-heading">Profile Information <i class="fa-solid fa-user"></i></h1> <p class="profile"><b>Name:</b> ${users[i].Name}</p><p class="profile"><b>Email:</b> ${users[i].Email}</p><p class="profile"><b>Phone No.:</b> ${users[i].Phone_No}</p>
-    //       <a href="/login.html"
-    //   ><button>LogOut</button></a
-    // ></div>`;
     localStorage.setItem("users1",JSON.stringify(users[i]));
-   
     window.location.href="home2.html";
         return;
       }
@@ -82,6 +90,11 @@ if(Submit1 != null){
 
 window.onload = function () {
   let users1 = JSON.parse(localStorage.getItem("users1"));
+  const recentImageDataUrl = users1.image;
+            
+        if(recentImageDataUrl){
+            document.querySelector("#image").setAttribute("src", recentImageDataUrl);
+        }
   for (let key in users1) {
     document.getElementById(key).innerHTML = users1[key];
   }
