@@ -26,7 +26,7 @@ body {
     justify-content: center;
   }
   #profile-heading {
-    font-size: 50px;
+    font-size: 40px;
     color: azure;
     font-family: "Poppins", sans-serif;
   }
@@ -36,6 +36,13 @@ body {
     font-family: "Poppins", sans-serif;
     text-align: left;
     margin: 10px 60px 10px;
+    font-size: 20px;
+  }
+  #profile-img{
+    color: azure;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin: -12px 60px -12px;
     font-size: 20px;
   }
   button {
