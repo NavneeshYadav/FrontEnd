@@ -24,9 +24,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: 1px solid azure;
+    border-radius: 10px;
+    padding: 13px 8px 13px;
   }
   #profile-heading {
-    font-size: 40px;
+    font-size: 35px;
     color: azure;
     font-family: "Poppins", sans-serif;
   }
@@ -44,6 +47,11 @@ body {
     text-align: center;
     margin: -12px 60px -12px;
     font-size: 20px;
+  }
+  img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
   }
   button {
     width: 85px;
