@@ -46,6 +46,10 @@ if (Submit != null) {
       alert("Password must be at least 6 characters long.");
       return;
     }
+    else if (user.image == null) {
+      alert("Image is not upload");
+      return;
+    }
 
     if (localStorage.getItem("users")) {
       users = JSON.parse(localStorage.getItem("users"));
