@@ -7,7 +7,6 @@ if(profile != null){
     const reader = new FileReader();
     reader.addEventListener("load",() => {
       upload_image+=reader.result;
-      // document.querySelector("#upload-img").style.backgroundImage = `url(${upload_image})`;
       localStorage.setItem("recent-image",reader.result);
     })
     reader.readAsDataURL(this.files[0]);
